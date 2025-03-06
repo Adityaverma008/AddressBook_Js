@@ -1,8 +1,9 @@
-const Contact = require("./Contact");
-const AddressBook = require("./AddressBook");
+import Contact from "./Contact.js";
+import AddressBook from "./AddressBook.js";
 
-let addressBook = new AddressBook();
+let addressBook = new AddressBook(); // reference of AddressBook class
 
+// create contacts
 let contact1 = new Contact(
   "John",
   "Doe",
@@ -10,7 +11,7 @@ let contact1 = new Contact(
   "Springfield",
   "IL",
   "62704",
-  "123-456-7890",
+  "9985012530",
   "john.doe@example.com"
 );
 let contact2 = new Contact(
@@ -20,14 +21,12 @@ let contact2 = new Contact(
   "Boston",
   "MA",
   "02108",
-  "987-654-3210",
+  "9876543210",
   "jane.smith@example.com"
 );
 
+// adding contact object to array
 addressBook.addContact(contact1);
 addressBook.addContact(contact2);
 
 console.log("All Contacts:\n", addressBook.displayContacts());
-
-addressBook.deleteContact("Jane", "Smith");
-console.log("\nAfter Deleting Jane Smith:\n", addressBook.displayContacts());

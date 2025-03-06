@@ -1,14 +1,5 @@
 class Contact {
-  constructor(
-    firstName,
-    lastName,
-    address,
-    city,
-    state,
-    zip,
-    phoneNumber,
-    email
-  ) {
+  constructor(firstName, lastName, address, city, state, zip, phone, email) {
     if (!this.validateName(firstName)) throw new Error("Invalid First Name!");
     if (!this.validateName(lastName)) throw new Error("Invalid Last Name!");
     if (!this.validateAddress(address)) throw new Error("Invalid Address!");
@@ -50,7 +41,7 @@ class Contact {
   }
 
   validatePhoneNumber(phone) {
-    let phonePattern = /^\d{10}$/;
+    let phonePattern = /^\d{3}-\d{3}-\d{4}$/;
     return phonePattern.test(phone);
   }
 
@@ -59,3 +50,6 @@ class Contact {
     return emailPattern.test(email);
   }
 }
+
+// Exporting the Contact class for usage in other files
+export default Contact;
